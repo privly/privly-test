@@ -1,0 +1,14 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: helvetica, verdana, arial, sans-serif;
+  font-size:   20px;
+  line-height: 30px;
+}
+
+a { color: #000; background-color:#ff0000; }
+h1 {font-size:   100px;}
+h2 {font-size:   80px;}
+h3 {font-size:   40px;}
+a:visited { color: #000; background-color:#ff0000; }
+a:hover { color: #000; background-color:#ffffff; }
