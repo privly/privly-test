@@ -31,6 +31,17 @@
               },
               800);
         });
+        
+        //Check mutation performance
+        //DOM mutation events are very inneficient, but there are ways to reduce the
+        //overhead.
+        // Set a timeout for running your methods and have only one method pending in the time frame
+        for(var i = 0; i < 1000; i++)
+        {
+            jQuery("#messages").html("<p>Testing mutation performance. If your browser slows down, you need to throttle your extension.</p>");
+        }
+        jQuery("#messages").html("<p>All tests are complete.</p>");
+        
       }, false);
   </script>
   <link href="styles.css" media="screen" rel="stylesheet" type="text/css" />
