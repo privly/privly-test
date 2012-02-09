@@ -1,1 +1,3 @@
 This repository contains the test content for Priv.ly html applications. To test your extension, clone or download the files from this repository, then open index.html in your extended application.
+
+Files appended with privly_ automatically include the core Privly javascript file on all its pages. This is the best place to start if privly.js has not been tested on your platform. All links on the test pages are Privly links, and appear with red background.
