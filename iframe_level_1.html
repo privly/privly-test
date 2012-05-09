@@ -36,60 +36,61 @@
   
 </head>
 <body>
-    <h1>Privly Test File</h1>
-    <p>This file contains a sample of ways Privly links may be displayed on host pages. Privly extensions must pass all these test cases before deployment.</p>
-    <div id="messages">No Messages</div>
+    <div id="test_area">
+        <h1>Privly Test File</h1>
+        <p>This file contains a sample of ways Privly links may be displayed on host pages. Privly extensions must pass all these test cases before deployment.</p>
+        <div id="messages">No Messages</div>
     
-    <h2>Static Content</h2>
+        <h2>Static Content</h2>
 
-    <h3>Anchor Elements<h3>
-    <ul>
-        <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2">http://localhost:3000/posts/2</a></p></li>
-        <li><p>Privly link <a href="https://priv.ly/posts/2">https://priv.ly/posts/2</a></p></li>
-        <li><p>Privly link without SSL <a href="http://priv.ly/posts/2">http://priv.ly/posts/2</a></p></li>
-    </ul>
-    <h3>Plain Text Elements<h3>
-    <ul>
-        <li><p>Localhost link <br/>http://localhost:3000/posts/2</p></li>
-        <li><p>Privly link https://priv.ly/posts/2</p></li>
-        <li><p>Privly link without SSL http://priv.ly/posts/2</p></li>
-    </ul>
-    <h3>Anchor Elements + Indirection<h3>
-    <p>Privly link forms all the body contents of the anchor, but the href points to a tracking server</p>
-    <ul>
-        <li><p>Localhost link <br/><a href="http://trackingserver.com">http://localhost:3000/posts/2</a></p></li>
-        <li><p>Privly link <a href="http://trackingserver.com">https://priv.ly/posts/2</a></p></li>
-        <li><p>Privly link without SSL <a href="http://trackingserver.com">http://priv.ly/posts/2</a></p></li>
-    </ul>
-    <p>Privly link is in the body of the anchor with other text, but the href points to a tracking server</p>
-    <ul>
-        <li><p>Localhost link <br/><a href="http://trackingserver.com">Our link is surrounded by other text http://localhost:3000/posts/2 yes it is.</a></p></li>
-        <li><p>Privly link <a href="http://trackingserver.com">Our link is surrounded by other text https://priv.ly/posts/2 yes it is.</a></p></li>
-        <li><p>Privly link without SSL <a href="http://trackingserver.com">Our link is surrounded by other text http://priv.ly/posts/2 yes it is.</a></p></li>
-    </ul>
-    <p>Privly link is on an attribute other than the href (unsolved)</p>
-    <ul>
-        <li><p>Localhost link <br/><a href="http://trackingserver.com" submitted_href="http://localhost:3000/posts/2">Link body does not contain Privly href</a></p></li>
-        <li><p>Privly link <a href="http://trackingserver.com" submitted_href="https://priv.ly/posts/2">Link body does not contain Privly href</a></p></li>
-        <li><p>Privly link without SSL <a href="http://trackingserver.com" submitted_href="http://priv.ly/posts/2">Link body does not contain Privly href</a></p></li>
-    </ul>
+        <h3>Anchor Elements<h3>
+        <ul>
+            <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2">http://localhost:3000/posts/2</a></p></li>
+            <li><p>Privly link <a href="https://priv.ly/posts/2">https://priv.ly/posts/2</a></p></li>
+            <li><p>Privly link without SSL <a href="http://priv.ly/posts/2">http://priv.ly/posts/2</a></p></li>
+        </ul>
+        <h3>Plain Text Elements<h3>
+        <ul>
+            <li><p>Localhost link <br/>http://localhost:3000/posts/2</p></li>
+            <li><p>Privly link https://priv.ly/posts/2</p></li>
+            <li><p>Privly link without SSL http://priv.ly/posts/2</p></li>
+        </ul>
+        <h3>Anchor Elements + Indirection<h3>
+        <p>Privly link forms all the body contents of the anchor, but the href points to a tracking server</p>
+        <ul>
+            <li><p>Localhost link <br/><a href="http://trackingserver.com">http://localhost:3000/posts/2</a></p></li>
+            <li><p>Privly link <a href="http://trackingserver.com">https://priv.ly/posts/2</a></p></li>
+            <li><p>Privly link without SSL <a href="http://trackingserver.com">http://priv.ly/posts/2</a></p></li>
+        </ul>
+        <p>Privly link is in the body of the anchor with other text, but the href points to a tracking server</p>
+        <ul>
+            <li><p>Localhost link <br/><a href="http://trackingserver.com">Our link is surrounded by other text http://localhost:3000/posts/2 yes it is.</a></p></li>
+            <li><p>Privly link <a href="http://trackingserver.com">Our link is surrounded by other text https://priv.ly/posts/2 yes it is.</a></p></li>
+            <li><p>Privly link without SSL <a href="http://trackingserver.com">Our link is surrounded by other text http://priv.ly/posts/2 yes it is.</a></p></li>
+        </ul>
+        <p>Privly link is on an attribute other than the href</p>
+        <ul>
+            <li><p>Localhost link <br/><a href="http://trackingserver.com" submitted_href="http://localhost:3000/posts/2">Link body does not contain Privly href</a></p></li>
+            <li><p>Privly link <a href="http://trackingserver.com" submitted_href="https://priv.ly/posts/2">Link body does not contain Privly href</a></p></li>
+            <li><p>Privly link without SSL <a href="http://trackingserver.com" submitted_href="http://priv.ly/posts/2">Link body does not contain Privly href</a></p></li>
+        </ul>
 
 
-    <h2>Dynamic Content</h2>
+        <h2>Dynamic Content</h2>
     
-    <h3>Anchor Elements<h3>
+        <h3>Anchor Elements<h3>
         <ul>
             <li id="0"></li>
             <li id="1"></li>
             <li id="2"></li>
         </ul>
-    <h3>Plain Text Elements<h3>
+        <h3>Plain Text Elements<h3>
         <ul>
             <li id="3"></li>
             <li id="4"></li>
             <li id="5"></li>
         </ul>
-    <h3>Anchor Elements + Indirection<h3>
+        <h3>Anchor Elements + Indirection<h3>
         <p>Privly link forms all the body contents of the anchor, but the href points to a tracking server</p>
         <ul>
             <li id="6"></li>
@@ -102,7 +103,7 @@
             <li id="10"></li>
             <li id="11"></li>
         </ul>
-        <p>Privly link is on an attribute other than the href (unsolved)</p>
+        <p>Privly link is on an attribute other than the href</p>
         <ul>
             <li id="12"></li>
             <li id="13"></li>

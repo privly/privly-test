@@ -6,11 +6,11 @@ body, p, ol, ul, td {
   line-height: 30px;
 }
 
-a { color: #000; background-color:#ff0000; }
+#test_area a { color: #000; background-color:#ff0000; }
 h1 {font-size:   100px;}
 h2 {font-size:   80px;}
 h3 {font-size:   40px;}
-a:visited { color: #000; background-color:#ff0000; }
-a:hover { color: #000; background-color:#ffffff; }
+#test_area a:visited { color: #000; background-color:#ff0000; }
+#test_area a:hover { color: #000; background-color:#ffffff; }
 
 .privly_link { color: #000; background-color:#ff0000; }
