@@ -1,3 +1,5 @@
-This repository contains the test content for Priv.ly html applications. To test your extension, clone or download the files from this repository, then open index.html in your extended application.
+This repository contains the test content for Priv.ly html applications. It is basically a series of static HTML pages with Privly links of various types. The test cases are intended to mimic the way that Privly links may be displayed across the web. This application is deployed to: test.privly.org.
 
-Files appended with privly_ automatically include the core Privly javascript file on all its pages. This is the best place to start if privly.js has not been tested on your platform. All links on the test pages are Privly links, and appear with a red background until they are replaced with an iframe.
+For more information on what Privly is, see https://priv.ly.
+
+The development home of Privly is at http://www.privly.org/. For information on how to join the Privly community, read this: http://www.privly.org/content/welcome-privly-development
