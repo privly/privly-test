@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Privly Test File</title>
+  
+  <link href="styles.css" media="screen" rel="stylesheet" type="text/css" />
+  
+  <script src="jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    checked_content = "";
+    
+    function append_update()
+    {
+        jQuery("#test-list").append(checked_content);
+    }
+  
+    window.addEventListener("load", function (e){
+        var content = [
+            {message: "should be burnt in 5 seconds", seconds_until_burn: 5},
+            {message: "should be burnt in 1 minute", seconds_until_burn: 60}
+            ];
+                
+        jQuery.each( content, function( index, val ) {
+          var contentServerUrl = "https://dev.privly.org";
+          var new_post = { 
+              "post[content]": val.message,
+              "post[public]": true,
+              "post[seconds_until_burn]": val.seconds_until_burn,
+              "endpoint": "testApp"
+            };
+          jQuery.ajax(
+            {
+              data: new_post,
+              type: "POST",
+              url: contentServerUrl+"/posts/posts_anonymous.json",
+              dataType: "jsonp",
+              accepts: "jsonp",
+              success: function(data, textStatus, jqXHR){
+                var data_url = data.privlyurl
+                var appendItem = '<li><p>'+data.content+'<a href="'+data_url+'">'+data_url+'</a></p></li>'
+                checked_content += appendItem;
+                jQuery("#test-list").append(appendItem);
+              }
+            }
+          );                
+              
+        });
+      }, false);
+  </script>
+</head>
+<body>
+    <div id="test_area">
+        <h1>Privly Timing File</h1>
+        <p>This dynamically generates posts and pushes them to the anonymous endpoint on dev.privly.org. Each post has a different burntAfter time as specified by the "seconds_until_burn" parameter. If your browser's time matches with the time on the server, your browser will not ask the remote server for the content as soon as the remote server will have destroyed it. If the time on your browser and the remote server are out of sync, your browser might ask for the content when it has already been destroyed, or your browser might not ask for the content when it still exists.</p>
+        
+        <h2>Test Links</h2>
+        <ul id="test-list"></ul>
+        <button onclick="append_update()">Click to Show the Links Again</button>
+    </div>
+</body>
+</html>
