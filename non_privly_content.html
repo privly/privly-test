@@ -8,10 +8,16 @@
 <body>
     <div id="test_area">
         <h1>Non-Whitelist Links</h1>
-        <p>This page will contain links of non-privly servers returning content conforming to the Privly standard.</p>
+        <p>This page will contain links of non-privly servers returning content conforming to the Privly standard. To test these out you'll need the any-content branch of the Firefox extension.</p>
         
-        <h2>Test Links</h2>
-        <ul><li><p>This link does not return content conforming to the Privly standard, we need people to set up community servers so we can fill out this page. <a href="https://www.privly.org/test/5#INJECTCONTENT0">https://www.privly.org/test/5#INJECTCONTENT0</a></p></li></ul>
+        <h3>Links Conforming to the Privly Standard</h3>
+        <ul><li>Currently all servers conforming to the Privly standard are on the whitelist, and don't need listing here. If you have a server you want on the default testing page, send us a message.</li></ul>
+        
+        <h3>Any Non-Privly link</h3>
+        <p>These links will not return Privly-type content. Anyone can mark a link for injection by including a #INJECTCONTENT0 anchor on the link. This functionality is still experimental.</p>
+        <ul><li><p>XKCD: <a href="http://xkcd.com#INJECTCONTENT0">https://www.privly.org/test/5#INJECTCONTENT0</a></p></li></ul>
+        <ul><li><p>Ars Technica: <a href="http://arstechnica.com#INJECTCONTENT0">http://arstechnica.com#INJECTCONTENT0</a></p></li></ul>
+        <ul><li><p>W3 Schools: <a href="http://www.w3schools.com/dom/met_element_getattribute.asp#INJECTCONTENT0">http://www.w3schools.com/dom/met_element_getattribute.asp#INJECTCONTENT0</a></p></li></ul>
     </div>
 </body>
 </html>
