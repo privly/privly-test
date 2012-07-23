@@ -10,21 +10,21 @@
   <script type="text/javascript">
       window.addEventListener("load", function (e){
         jQuery("#messages").html("<p>This is where testing messages will be displayed</p>");
-        var content = ['<p>Localhost link <br/><a href="http://localhost:3000/posts/2#privlyinject1">http://localhost:3000/posts/2#privlyinject1</a></p>',
-                       '<p>Privly link <a href="https://priv.ly/posts/2#privlyinject1">https://priv.ly/posts/2#privlyinject1</a></p>',
-                       '<p>Privly link without SSL <a href="http://priv.ly/posts/2#privlyinject1">http://priv.ly/posts/2#privlyinject1</a></p>',
-                       '<p>Localhost link <br/>http://localhost:3000/posts/2#privlyinject1</p>',
-                       '<p>Privly link https://priv.ly/posts/2#privlyinject1</p>',
-                       '<p>Privly link without SSL http://priv.ly/posts/2#privlyinject1</p>',
-                       '<p>Localhost link <br/><a href="http://trackingserver.com">http://localhost:3000/posts/2#privlyinject1</a></p>',
-                       '<p>Privly link <a href="http://trackingserver.com">https://priv.ly/posts/2#privlyinject1</a></p>',
-                       '<p>Privly link without SSL <a href="http://trackingserver.com">http://priv.ly/posts/2#privlyinject1</a></p>',
-                       '<p>Localhost link <br/><a href="http://trackingserver.com">Our link is surrounded by other text http://localhost:3000/posts/2#privlyinject1 yes it is.</a></p>',
-                       '<p>Privly link <a href="http://trackingserver.com">Our link is surrounded by other text https://priv.ly/posts/2#privlyinject1 yes it is.</a></p>',
-                       '<p>Privly link without SSL <a href="http://trackingserver.com">Our link is surrounded by other text http://priv.ly/posts/2#privlyinject1 yes it is.</a></p>',
-                       '<p>Localhost link <br/><a href="http://trackingserver.com" submitted_href="http://localhost:3000/posts/2#privlyinject1">Link body does not contain Privly href</a></p>',
-                       '<p>Privly link <a href="http://trackingserver.com" submitted_href="https://priv.ly/posts/2#privlyinject1">Link body does not contain Privly href</a></p>',
-                       '<p>Privly link without SSL <a href="http://trackingserver.com" submitted_href="http://priv.ly/posts/2#privlyinject1">Link body does not contain Privly href</a></p>']
+        var content = ['<p>Localhost link <br/><a href="http://localhost:3000/posts/2#privlyInject1">http://localhost:3000/posts/2#privlyInject1</a></p>',
+                       '<p>Privly link <a href="https://priv.ly/posts/2#privlyInject1">https://priv.ly/posts/2#privlyInject1</a></p>',
+                       '<p>Privly link without SSL <a href="http://priv.ly/posts/2#privlyInject1">http://priv.ly/posts/2#privlyInject1</a></p>',
+                       '<p>Localhost link <br/>http://localhost:3000/posts/2#privlyInject1</p>',
+                       '<p>Privly link https://priv.ly/posts/2#privlyInject1</p>',
+                       '<p>Privly link without SSL http://priv.ly/posts/2#privlyInject1</p>',
+                       '<p>Localhost link <br/><a href="http://trackingserver.com">http://localhost:3000/posts/2#privlyInject1</a></p>',
+                       '<p>Privly link <a href="http://trackingserver.com">https://priv.ly/posts/2#privlyInject1</a></p>',
+                       '<p>Privly link without SSL <a href="http://trackingserver.com">http://priv.ly/posts/2#privlyInject1</a></p>',
+                       '<p>Localhost link <br/><a href="http://trackingserver.com">Our link is surrounded by other text http://localhost:3000/posts/2#privlyInject1 yes it is.</a></p>',
+                       '<p>Privly link <a href="http://trackingserver.com">Our link is surrounded by other text https://priv.ly/posts/2#privlyInject1 yes it is.</a></p>',
+                       '<p>Privly link without SSL <a href="http://trackingserver.com">Our link is surrounded by other text http://priv.ly/posts/2#privlyInject1 yes it is.</a></p>',
+                       '<p>Localhost link <br/><a href="http://trackingserver.com" submitted_href="http://localhost:3000/posts/2#privlyInject1">Link body does not contain Privly href</a></p>',
+                       '<p>Privly link <a href="http://trackingserver.com" submitted_href="https://priv.ly/posts/2#privlyInject1">Link body does not contain Privly href</a></p>',
+                       '<p>Privly link without SSL <a href="http://trackingserver.com" submitted_href="http://priv.ly/posts/2#privlyInject1">Link body does not contain Privly href</a></p>']
                 
         jQuery.each( content, function( index, val ) {
             setTimeout(
@@ -58,34 +58,34 @@
 
     <h3>Anchor Elements<h3>
     <ul>
-        <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2#privlyinject1">http://localhost:3000/posts/2#privlyinject1</a></p></li>
-        <li><p>Privly link <a href="https://priv.ly/posts/2#privlyinject1">https://priv.ly/posts/2#privlyinject1</a></p></li>
-        <li><p>Privly link without SSL <a href="http://priv.ly/posts/2#privlyinject1">http://priv.ly/posts/2#privlyinject1</a></p></li>
+        <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2#privlyInject1">http://localhost:3000/posts/2#privlyInject1</a></p></li>
+        <li><p>Privly link <a href="https://priv.ly/posts/2#privlyInject1">https://priv.ly/posts/2#privlyInject1</a></p></li>
+        <li><p>Privly link without SSL <a href="http://priv.ly/posts/2#privlyInject1">http://priv.ly/posts/2#privlyInject1</a></p></li>
     </ul>
     <h3>Plain Text Elements<h3>
     <ul>
-        <li><p>Localhost link <br/>http://localhost:3000/posts/2#privlyinject1</p></li>
-        <li><p>Privly link https://priv.ly/posts/2#privlyinject1</p></li>
-        <li><p>Privly link without SSL http://priv.ly/posts/2#privlyinject1</p></li>
+        <li><p>Localhost link <br/>http://localhost:3000/posts/2#privlyInject1</p></li>
+        <li><p>Privly link https://priv.ly/posts/2#privlyInject1</p></li>
+        <li><p>Privly link without SSL http://priv.ly/posts/2#privlyInject1</p></li>
     </ul>
     <h3>Anchor Elements + Indirection<h3>
     <p>Privly link forms all the body contents of the anchor, but the href points to a tracking server</p>
     <ul>
-        <li><p>Localhost link <br/><a href="http://trackingserver.com">http://localhost:3000/posts/2#privlyinject1</a></p></li>
-        <li><p>Privly link <a href="http://trackingserver.com">https://priv.ly/posts/2#privlyinject1</a></p></li>
-        <li><p>Privly link without SSL <a href="http://trackingserver.com">http://priv.ly/posts/2#privlyinject1</a></p></li>
+        <li><p>Localhost link <br/><a href="http://trackingserver.com">http://localhost:3000/posts/2#privlyInject1</a></p></li>
+        <li><p>Privly link <a href="http://trackingserver.com">https://priv.ly/posts/2#privlyInject1</a></p></li>
+        <li><p>Privly link without SSL <a href="http://trackingserver.com">http://priv.ly/posts/2#privlyInject1</a></p></li>
     </ul>
     <p>Privly link is in the body of the anchor with other text, but the href points to a tracking server</p>
     <ul>
-        <li><p>Localhost link <br/><a href="http://trackingserver.com">Our link is surrounded by other text http://localhost:3000/posts/2#privlyinject1 yes it is.</a></p></li>
-        <li><p>Privly link <a href="http://trackingserver.com">Our link is surrounded by other text https://priv.ly/posts/2#privlyinject1 yes it is.</a></p></li>
-        <li><p>Privly link without SSL <a href="http://trackingserver.com">Our link is surrounded by other text http://priv.ly/posts/2#privlyinject1 yes it is.</a></p></li>
+        <li><p>Localhost link <br/><a href="http://trackingserver.com">Our link is surrounded by other text http://localhost:3000/posts/2#privlyInject1 yes it is.</a></p></li>
+        <li><p>Privly link <a href="http://trackingserver.com">Our link is surrounded by other text https://priv.ly/posts/2#privlyInject1 yes it is.</a></p></li>
+        <li><p>Privly link without SSL <a href="http://trackingserver.com">Our link is surrounded by other text http://priv.ly/posts/2#privlyInject1 yes it is.</a></p></li>
     </ul>
     <p>Privly link is on an attribute other than the href</p>
     <ul>
-        <li><p>Localhost link <br/><a href="http://trackingserver.com" submitted_href="http://localhost:3000/posts/2#privlyinject1">Link body does not contain Privly href</a></p></li>
-        <li><p>Privly link <a href="http://trackingserver.com" submitted_href="https://priv.ly/posts/2#privlyinject1">Link body does not contain Privly href</a></p></li>
-        <li><p>Privly link without SSL <a href="http://trackingserver.com" submitted_href="http://priv.ly/posts/2#privlyinject1">Link body does not contain Privly href</a></p></li>
+        <li><p>Localhost link <br/><a href="http://trackingserver.com" submitted_href="http://localhost:3000/posts/2#privlyInject1">Link body does not contain Privly href</a></p></li>
+        <li><p>Privly link <a href="http://trackingserver.com" submitted_href="https://priv.ly/posts/2#privlyInject1">Link body does not contain Privly href</a></p></li>
+        <li><p>Privly link without SSL <a href="http://trackingserver.com" submitted_href="http://priv.ly/posts/2#privlyInject1">Link body does not contain Privly href</a></p></li>
     </ul>
 
 
