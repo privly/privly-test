@@ -18,7 +18,6 @@
         <h3>No Parameters</h3>
         <p>These are links without any URL parameters.</p>
         <ul>
-            <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2#privlyInject1">http://localhost:3000/posts/2#privlyInject1</a></p></li>
             <li><p>Privly link <a href="https://priv.ly/posts/2#privlyInject1">https://priv.ly/posts/2#privlyInject1</a></p></li>
         </ul>
         
@@ -26,49 +25,42 @@
         <h3>Forced Passive</h3>
         <p>These links are forced into passive mode by a parameter.</p>
         <ul>
-            <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2?passive=true#privlyInject1">http://localhost:3000/posts/2?passive=true#privlyInject1</a></p></li>
             <li><p>Privly link <a href="https://priv.ly/posts/2?passive=true#privlyInject1">https://priv.ly/posts/2?passive=true#privlyInject1</a></p></li>
         </ul>
         
         <h3>Passive Message</h3>
         <p>These links display a message when they are in passive mode.</p>
         <ul>
-            <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2?passiveMessage=You+are+in+passive+mode,+it+worked#privlyInject1">http://localhost:3000/posts/2?passiveMessage=You+are+in+passive+mode,+it+worked#privlyInject1</a></p></li>
             <li><p>Privly link <a href="https://priv.ly/posts/2?passiveMessage=You+are+in+passive+mode,+it+worked#privlyInject1">https://priv.ly/posts/2?passive=true&passiveMessage=You+are+in+passive+mode,+it+worked#privlyInject1</a></p></li>
         </ul>
         
         <h3>Forced Passive with Message</h3>
         <p>These links are forced into passive mode, but they have a message.</p>
         <ul>
-            <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2?passiveMessage=You+are+in+passive+mode,+it+worked&passive=true#privlyInject1">http://localhost:3000/posts/2?passiveMessage=You+are+in+passive+mode,+it+worked&passive=true#privlyInject1</a></p></li>
             <li><p>Privly link <a href="https://priv.ly/posts/2?passive=true&passiveMessage=You+are+in+passive+mode,+it+worked#privlyInject1">https://priv.ly/posts/2?passive=true&passiveMessage=You+are+in+passive+mode,+it+worked#privlyInject1</a></p></li>
         </ul>
         
         <h3>Forced Exclusion</h3>
         <p>These links are not modified once they are anchor elements.</p>
         <ul>
-            <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2?exclude=true#privlyInject1">http://localhost:3000/posts/2?exclude=true#privlyInject1</a></p></li>
             <li><p>Privly link <a href="https://priv.ly/posts/2?exclude=true#privlyInject1">https://priv.ly/posts/2?exclude=true#privlyInject1</a></p></li>
         </ul>
         
         <h3>Burnt</h3>
         <p>These links were tagged as being destroyed on the remote server.</p>
         <ul>
-            <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2?burntAfter=1#privlyInject1">http://localhost:3000/posts/2?burntAfter=1#privlyInject1</a></p></li>
             <li><p>Privly link <a href="https://priv.ly/posts/2?burntAfter=1#privlyInject1">https://priv.ly/posts/2?burntAfter=1#privlyInject1</a></p></li>
         </ul>
         
         <h3>Burnt with Message</h3>
         <p>These are links that are burnt, but they have a message that is viewable in place after the time is up.</p>
         <ul>
-            <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2?burntAfter=1&burntMessage=this+is+the+burn+message#privlyInject1">http://localhost:3000/posts/2?burntAfter=1&burntMessage=this+is+the+burn+message#privlyInject1</a></p></li>
             <li><p>Privly link <a href="https://priv.ly/posts/2?burntAfter=1&burntMessage=this+is+the+burn+message#privlyInject1">https://priv.ly/posts/2?burntAfter=1&burntMessage=this+is+the+burn+message#privlyInject1</a></p></li>
         </ul>
         
         <h3>Excluded by Attribute</h3>
         <p>These links are excluded not by parameters on the link, but by an attribute on the anchor element.</p>
         <ul>
-            <li><p>Localhost link <br/><a href="http://localhost:3000/posts/2#privlyInject1" privly-exclude="true">http://localhost:3000/posts/2#privlyInject1</a></p></li>
             <li><p>Privly link <a href="https://priv.ly/posts/2#privlyInject1" privly-exclude="true">https://priv.ly/posts/2#privlyInject1</a></p></li>
         </ul>
     </div>
