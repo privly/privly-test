@@ -9,16 +9,39 @@
   
 </head>
 <body>
-        <h1>Privly Test Files</h1>
-        <p>These file contains a samples of URL formats and conditions that all extensions must pass before they can be deployed.</p>
-    
-        <ul>
-            <li><p><a href="short.html">Short Test File</a></p></li>
-            <li><p><a href="long.html">Long Test File</a></p></li>
-            <li><p><a href="url_parameters.html">URLs with Parameters</a></p></li>
-            <li><p><a href="burnt_after_timing.html">URLs Forced into passive mode with different burntAfter times</a></p></li>
-            <li><p><a href="non_privly_content.html">Servers not on the "White List"</a></p></li>
-            <!-- <li><p><a href="zero_bin.html">Encrypted Remote Content</a></p></li> -->
-        </ul>
+  
+  <h1>Privly Test Pages</h1>
+  
+  <p>This website contains a series of test cases for Privly-type links. These pages are directed mostly at developers, but if you are having difficulty with a Privly extension, you may be directed here. For more information on what Privly is, go to <a href="https://priv.ly/pages/about">Priv.ly</a></p>
+  
+  <h2>Current Test Files</h2>
+  <p>These test files run through a series of cases which all Privly-type extensions must pass.</p>
+  
+  <ul>
+      <li><a href="test_pages/url_parameters.html">URL Parameters</a>: Privly links support directives for the extension. This page checks the behavior of the links.</li>
+      <li><a href="test_pages/whitelist.html">Whitelist</a>: Privly has a default list of trusted domains. This page ensures that all the trusted domains are handled consistently</li>
+      <li><a href="test_pages/nonwhitelist.html">Non-Whitelisted</a>: Non-trusted domains can indicate their support of Privly injection. This page checks their behavior.</li>
+      <li><a href="test_pages/misdirection.html">Misdirection</a>: Many sites change the way links are displayed or tracked. This page is a developing list of cases found across the internet.</li>
+      <li><a href="test_pages/iframes.html">Iframe Depth</a>: Many websites render their content within iframes. This page ensures that Privly works for an arbitrary depth of iframes.</li>
+  </ul>
+  
+  <h2>Localhost Test Files</h2>
+  <p>For these pages to work you must be running a server on your local machine.</p>
+  
+  <ul>
+      <li><a href="test_pages/url_parameters.html#http://localhost:3000">URL Parameters</a>: Privly links support directives for the extension. This page checks the behavior of the links.</li>
+      <li><a href="test_pages/performance.html">Performance</a>: This page has many whitelisted links for injection.</li>
+  </ul>
+  
+  <h2>Old Test Files</h2>
+  <p>These are deprecated (old) test case files. The requirements of these tests are all present in the above tests.</p>
+  
+  <ul>
+      <li><p><a href="old_test_files/short.html">Short Test File</a></p></li>
+      <li><p><a href="old_test_files/long.html">Long Test File</a></p></li>
+      <li><p><a href="old_test_files/url_parameters.html">URLs with Parameters</a></p></li>
+      <li><p><a href="old_test_files/burnt_after_timing.html">URLs Forced into passive mode with different burntAfter times</a></p></li>
+      <li><p><a href="old_test_files/non_privly_content.html">Servers not on the "White List"</a></p></li>
+  </ul>
 </body>
 </html>
