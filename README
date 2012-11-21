@@ -1,4 +1,4 @@
-This repository contains the test content for Priv.ly html applications. It is basically a series of static HTML pages with Privly links of various types. The test cases are intended to mimic the way that Privly links may be displayed across the web. This application is deployed to: http://test.privly.org.
+This repository contains the test cases for Privly extensions. It is basically a series of static HTML pages with Privly links of various types. The test cases are intended to mimic the way that Privly links may be displayed across the web. This application is deployed to: http://test.privly.org.
 
 For more information on what Privly is, see https://priv.ly/pages/about.
 
