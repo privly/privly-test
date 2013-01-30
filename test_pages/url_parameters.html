@@ -45,7 +45,7 @@
           should: "Should replace the link with the referenced content",
           link_body: "FAILURE!!!",
           a: {
-            href: hostDomain + "/posts/2#privlyInject1",
+            href: hostDomain + "/posts/2?privlyInjectableApplication=PlainPost#privlyInject1",
             "class": "replace_link"
           }
         },
@@ -56,7 +56,7 @@
           should: "The link should not be injected into the page without clicking it",
           link_body: "Success",
           a: {
-            href: hostDomain + "/posts/2?privlyPassive=true#privlyInject1"
+            href: hostDomain + "/posts/2?privlyPassive=true&privlyInjectableApplication=PlainPost#privlyInject1"
           }
         },
         
@@ -66,7 +66,7 @@
           should: "Description of the desired result",
           link_body: "possible success",
           a: {
-            href: hostDomain + "/posts/2?privlyPassiveMessage=You%20are%20in%20passive%20mode%2C%20it%20worked#privlyInject1",
+            href: hostDomain + "/posts/2?privlyPassiveMessage=You%20are%20in%20passive%20mode%2C%20it%20worked&privlyInjectableApplication=PlainPost#privlyInject1",
             "class": "replace_link"
           }
         },
@@ -77,7 +77,7 @@
           should: "Should Display a link with the text: You are in passive mode, it worked",
           link_body: "link body",
           a: {
-            href: hostDomain + "/posts/2?privlyPassive=true&privlyPassiveMessage=You%20are%20in%20passive%20mode%2C%20it%20worked#privlyInject1"
+            href: hostDomain + "/posts/2?privlyPassive=true&privlyPassiveMessage=You%20are%20in%20passive%20mode%2C%20it%20worked&privlyInjectableApplication=PlainPost#privlyInject1"
           }
         },
         
@@ -87,7 +87,7 @@
           should: "Should read 'Success'",
           link_body: "Success",
           a: {
-            href: hostDomain + "/posts/2?privlyExclude=true#privlyInject1"
+            href: hostDomain + "/posts/2?privlyExclude=true&privlyInjectableApplication=PlainPost#privlyInject1"
           }
         },
         
@@ -97,7 +97,7 @@
           should: "Should read 'Success'",
           link_body: "Success",
           a: {
-            href: hostDomain + "/posts/2#privlyInject1",
+            href: hostDomain + "/posts/2&privlyInjectableApplication=PlainPost#privlyInject1",
             "privly-exclude": "true"
           }
         },
@@ -108,7 +108,7 @@
           should: "Should place the link into passive mode, and indicate it has been destroyed",
           link_body: "Failure",
           a: {
-            href: hostDomain + "/posts/2?privlyBurntAfter=1#privlyInject1"
+            href: hostDomain + "/posts/2&privlyInjectableApplication=PlainPost?privlyBurntAfter=1#privlyInject1"
           }
         },
         
@@ -118,7 +118,7 @@
           should: "Should display the message: 'this is the burn message'",
           link_body: "link body",
           a: {
-            href: hostDomain + "/posts/2?privlyBurntAfter=1&privlyBurntMessage=This%20is%20the%20burn%20message#privlyInject1"
+            href: hostDomain + "/posts/2?privlyBurntAfter=1&privlyBurntMessage=This%20is%20the%20burn%20message&privlyInjectableApplication=PlainPost#privlyInject1"
           }
         },
 

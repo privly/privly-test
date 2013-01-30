@@ -35,7 +35,7 @@
           notes: "Some sites do not linkify user submitted links.",
           should: "Should replace the plain text link with the referenced content",
           link_body: "",
-          test_paragraph: "https://priv.ly/posts/2#privlyInject1",
+          test_paragraph: "https://priv.ly/posts/2?privlyInjectableApplication=PlainPost#privlyInject1",
           a: { }
         },
         {
@@ -43,14 +43,14 @@
           notes: "Some sites do not linkify user submitted links.",
           should: "Should replace the plain text link with the referenced content",
           link_body: "",
-          test_paragraph: "http://priv.ly/posts/2#privlyInject1",
+          test_paragraph: "http://priv.ly/posts/2?privlyInjectableApplication=PlainPost#privlyInject1",
           a: { }
         },
         {
           title: "View Does not Equal href",
           notes: "Some sites display the proper link, but the href element points to another domain.",
           should: "Should replace the link with the visible URL",
-          link_body: "https://priv.ly/posts/2#privlyInject1",
+          link_body: "https://priv.ly/posts/2?privlyInjectableApplication=PlainPost#privlyInject1",
           a: {
             href: "https://example.com",
             "class": "replace_link"
@@ -63,7 +63,7 @@
           link_body: "FAILURE!!!",
           a: {
             href: "https://example.com",
-            randomAttribute: "https://priv.ly/posts/2#privlyInject1",
+            randomAttribute: "https://priv.ly/posts/2?privlyInjectableApplication=PlainPost#privlyInject1",
             "class": "replace_link"
           }
         }
