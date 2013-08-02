@@ -45,12 +45,11 @@
           should: "Should display cleartext content without knowledge that it is displayed in an iframe",
           link_body: "FAILURE!!!",
           a: {
-            href: hostDomain + "/zero_bin" + 
-                    "?privlyInjectableApplication=ZeroBin" +
-                    "#privlyLinkKey=jc%2BL1866uzn0%2FB4VrBRfpQgXiJnGKlDNFx4KJgdy428%3D" +
-                    "&privlyCiphertextURL=http%3A%2F%2Flocalhost%3A3000%2Fposts%2F259%3F" +
-                    "burntAfter%3D1351878058%26privlyInject1%3Dtrue%26" + 
-                    "random_token%3Db4febe1bf8&privlyInject1=true&p=p",
+            href: hostDomain + "/apps/ZeroBin/show" + 
+                    "?privlyApp=ZeroBin" +
+                            "&privlyInject1=true" + 
+                            "&random_token=b654fe6dbf" + "&privlyDataURL=https%3A%2F%2Fprivlyalpha.org%2Fposts%2F980.json%3Frandom_token%3Db654fe6dbf" + 
+                            "#privlyLinkKey=7trHbTe+7wezJ0E+HqfmgT+dI9Aw9USirC1UcE0e7W0=",
             "class": "replace_link"
           }
         },
@@ -60,7 +59,7 @@
           should: "Should replace the link with the referenced content",
           link_body: "FAILURE!!!",
           a: {
-            href: hostDomain + "/posts/2&privlyInjectableApplication=PlainPost#privlyInject1",
+            href: hostDomain + "/posts/2&privlyApp=PlainPost#privlyInject1",
             "class": "replace_link"
           }
         }
