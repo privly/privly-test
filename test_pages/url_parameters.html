@@ -53,31 +53,10 @@
         {
           title: "Forced Passive",
           notes: "These links are forced into passive mode by a parameter.",
-          should: "The link should not be injected into the page without clicking it",
+          should: "Should not inject the link.",
           link_body: "Success",
           a: {
             href: hostDomain + "/posts/2?privlyPassive=true&privlyApp=PlainPost#privlyInject1"
-          }
-        },
-        
-        {
-          title: "Passive Message (not Displayed)",
-          notes: "If the extension is in active mode, this link should be injected. If the extension is in passive mode, this link should not be injected.",
-          should: "Description of the desired result",
-          link_body: "possible success",
-          a: {
-            href: hostDomain + "/posts/2?privlyPassiveMessage=You%20are%20in%20passive%20mode%2C%20it%20worked&privlyApp=PlainPost#privlyInject1",
-            "class": "replace_link"
-          }
-        },
-        
-        {
-          title: "Forced Passive + Passive Message",
-          notes: "This link is forced into passive mode with a message.",
-          should: "Should Display a link with the text: You are in passive mode, it worked",
-          link_body: "link body",
-          a: {
-            href: hostDomain + "/posts/2?privlyPassive=true&privlyPassiveMessage=You%20are%20in%20passive%20mode%2C%20it%20worked&privlyApp=PlainPost#privlyInject1"
           }
         },
         
@@ -105,27 +84,17 @@
         {
           title: "Burnt",
           notes: "This link is tagged as destroyed by the remote server. ",
-          should: "Should place the link into passive mode, and indicate it has been destroyed",
-          link_body: "Failure",
+          should: "Should not inject the link",
+          link_body: "Success",
           a: {
             href: hostDomain + "/posts/2&privlyApp=PlainPost?privlyBurntAfter=1#privlyInject1"
           }
         },
         
         {
-          title: "Burnt with Message",
-          notes: "This link is tagged as destroyed by the remote server, but the link includes a message to display in this event.",
-          should: "Should display the message: 'this is the burn message'",
-          link_body: "link body",
-          a: {
-            href: hostDomain + "/posts/2?privlyBurntAfter=1&privlyBurntMessage=This%20is%20the%20burn%20message&privlyApp=PlainPost#privlyInject1"
-          }
-        },
-
-        {
           title: "Burnt in the Anchortext",
           notes: "This link is tagged as destroyed by the remote server.",
-          should: "Should place the link into passive mode, and indicate it has been destroyed",
+          should: "Should not inject the link",
           link_body: "link body",
           a: {
             href: hostDomain + "/apps/ZeroBin/show" + 
@@ -133,7 +102,7 @@
                             "&privlyInject1=true" + 
                             "&random_token=b654fe6dbf" + "&privlyDataURL=https%3A%2F%2Fprivlyalpha.org%2Fposts%2F980.json%3Frandom_token%3Db654fe6dbf" + 
                             "#privlyLinkKey=7trHbTe+7wezJ0E+HqfmgT+dI9Aw9USirC1UcE0e7W0=" + 
-                            "&burntAfter=136646"
+                            "&privlyBurntAfter=136646"
           }
         },
         

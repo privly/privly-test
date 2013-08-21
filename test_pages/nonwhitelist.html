@@ -33,7 +33,7 @@
         {
           title: "Priv.ly.com",
           notes: "-",
-          should: "Should give a passive message",
+          should: "Should not inject the link",
           link_body: "Success",
           a: {
             href: "https://priv.ly.com/posts/2?privlyApp=PlainPost#privlyInject1"
@@ -42,7 +42,7 @@
         {
           title: "Dev.Privly.Org.phish.org",
           notes: "-",
-          should: "Should give a passive message",
+          should: "Should not inject the link",
           link_body: "Success",
           a: {
             href: "https://dev.privly.org.phish.org/posts/2?privlyApp=PlainPost#privlyInject1"
@@ -51,7 +51,7 @@
         {
           title: "xPrivlyAlpha.org",
           notes: "-",
-          should: "Should give a passive message",
+          should: "Should not inject the link",
           link_body: "Success",
           a: {
             href: "https://xPrivlyAlpha.org/posts/2?privlyApp=PlainPost#privlyInject1"
@@ -60,7 +60,7 @@
         {
           title: "Privlybeta.orgs",
           notes: "-",
-          should: "Should give a passive message",
+          should: "Should not inject the link",
           link_body: "Success",
           a: {
             href: "https://privlybeta.orgs/posts/2?privlyApp=PlainPost#privlyInject1"
@@ -69,7 +69,7 @@
         {
           title: "localhostx:3000",
           notes: "-",
-          should: "Should give a passive message",
+          should: "Should not inject the link",
           link_body: "Success",
           a: {
             href: "http://localhostx:3000/posts/2?privlyApp=PlainPost#privlyInject1"
@@ -79,7 +79,7 @@
         {
           title: "localhost:3000.com",
           notes: "-",
-          should: "Should give a passive message",
+          should: "Should not inject the link",
           link_body: "Success",
           a: {
             href: "http://localhost:3000.com/posts/2?privlyApp=PlainPost#privlyInject1"
@@ -89,7 +89,7 @@
         {
           title: "Query String",
           notes: "-",
-          should: "Should give a passive message",
+          should: "Should not inject the link",
           link_body: "Success",
           a: {
             href: "https://www.google.com/search?q=http://localhost:3000/posts/299%3FburntAfter%3D1352966400%26privlyBurntAfter%3D1352966400%26privlyInject1%3Dtrue%26random_token%3De47f973690%23privlyInject1%3Dtrue%26p%3Dp&hl=en&client=firefox-a&hs=p6N&rls=org.mozilla:en-US:official&prmd=imvns&tbo=1&biw=1308&bih=799"
@@ -141,7 +141,7 @@
   <!-- All test cases are added to the test_area -->
   <div id="test_area">
     <h1>Privly Non-Whitelist Test File</h1>
-    <p>This file contains a list of non-default whitelisted links conforming to the Privly URL specification. They should all be in passive mode.</p>
+    <p>This file contains a list of non-default whitelisted links conforming to the Privly URL specification. None of them should be injected.</p>
   </div>
 </body>
 </html>
