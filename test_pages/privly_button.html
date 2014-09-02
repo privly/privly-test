@@ -15,43 +15,43 @@
     <p>This file contains a test cases for different circumstances in which the Privly button should appear.
     It shows its position relative to the height of the textarea / editable divs.</p>
     </br>
-    <h4>Large textarea with immediate parent div</h4>
+    <h4>1. Large textarea with immediate parent div</h4>
     <p>Parent div has border.</p>
     <div id="div1"><textarea id="textarea1">Write something...</textarea></div>
     </br><hr>
 
-    <h4>Large textarea without immediate parent div</h4>
+    <h4>2. Large textarea without immediate parent div</h4>
     <p>Textarea has border.</p>
     <textarea id="textarea1b">Write something...</textarea>
     </br><hr>
 
-    <h4>Small textarea (21px) with immediate parent div</h4>
+    <h4>3. Small textarea (21px) with immediate parent div</h4>
     <p>Child textarea has 10px top margin. Parent div has a border.</p>
     <div id="div1"><textarea id="textarea2">Enter...</textarea></div>
     </br><hr>
 
-    <h4>Small textarea (21px) without immediate parent div</h4>
+    <h4>4. Small textarea (21px) without immediate parent div</h4>
     <p>Textarea has border.</p>
     <textarea id="textarea2b">Enter...</textarea>
     </br><hr>
 
-    <h4>Very small textarea (&lt 21px) with immediate parent div</h4>
+    <h4>5. Very small textarea (&lt; 21px) with immediate parent div</h4>
     <p>Textarea has border.</p>
     <div><textarea id="textarea3">Enter...</textarea></div>
     </br><hr>
 
-    <h4>Very small textarea (&lt 21px) without immediate parent div</h4>
+    <h4>6. Very small textarea (&lt; 21px) without immediate parent div</h4>
     <p>Textarea has border.</p>
     <textarea id="textarea3">Enter...</textarea>
     </br><hr>
 
-    <h4>Editable div</h4>
+    <h4>7. Editable div</h4>
     <p>Div has border.</p>
     <div contentEditable="true" id="div1">Enter...</div>
     </br><hr>
 
     <h4>Editable div with blank child div (Twitter)</h4>
-    <p>Div has border.</p>
+    <p>Div has border. Click in the lower part of the div.</p>
     <div contentEditable="true" id="div2"><div></br></div></div>
   </div>
 </body>
