@@ -1,0 +1,52 @@
+hr {
+  border: 1px;
+  height: 1px;
+  background: #333;
+  background-image: -webkit-linear-gradient(left, #333, #ccc, #ccc); 
+  background-image:    -moz-linear-gradient(left, #333, #ccc, #ccc); 
+  background-image:     -ms-linear-gradient(left, #333, #ccc, #ccc); 
+  background-image:      -o-linear-gradient(left, #333, #ccc, #ccc); 
+}
+
+#textarea1 {
+  width: 400px;
+  height: 100px;
+  resize: none;
+  border: none;  
+  outline: none;
+}
+#textarea1b {
+  width: 400px;
+  height: 100px;
+  resize: none;
+  outline: none;
+}
+#textarea2 {
+  width: 400px;
+  height: 21px;
+  resize: none;
+  border: none;
+  margin-top: 10px;
+  outline: none;
+}
+#textarea2b {
+  width: 400px;
+  height: 21px;
+  resize: none;
+  margin-top: 10px;
+  outline: none;
+}
+#textarea3 {
+  width: 400px;
+  height: 15px;
+  resize: none;
+}
+#div1 {
+  width: 407px;
+  border: 1px solid grey;  
+}
+#div2 {
+  width: 400px;
+  height: 30px;
+  border: 1px solid grey;
+}
