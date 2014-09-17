@@ -66,6 +66,22 @@
             randomAttribute: "https://priv.ly/posts/2?privlyApp=PlainPost#privlyInject1",
             "class": "replace_link"
           }
+        },
+        {
+          title: "A plain text link is surrounded with strange whitespace.",
+          notes: "",
+          should: "Should replace the link with the referenced content",
+          link_body: "",
+          test_paragraph: "\n  https://priv.ly/posts/2?privlyApp=PlainPost#privlyInject1  \n",
+          a: { }
+        },
+        {
+          title: "A plain text link is surrounded with strange characters.",
+          notes: "",
+          should: "Should replace the link with the referenced content",
+          link_body: "",
+          test_paragraph: "ßssƒ ∫å˚\n  https://priv.ly/posts/2?privlyApp=PlainPost#privlyInject1  ßssƒ ∫å˚\n  ",
+          a: { }
         }
       ]
       
