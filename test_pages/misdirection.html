@@ -73,7 +73,10 @@
           should: "Should replace the link with the referenced content",
           link_body: "",
           test_paragraph: "\n  https://priv.ly/posts/2?privlyApp=PlainPost#privlyInject1  \n",
-          a: { }
+          a: {
+            href: "https://example.com",
+            "class": "replace_link"
+          }
         },
         {
           title: "A plain text link is surrounded with strange characters.",
@@ -81,7 +84,10 @@
           should: "Should replace the link with the referenced content",
           link_body: "",
           test_paragraph: "ßssƒ ∫å˚\n  https://priv.ly/posts/2?privlyApp=PlainPost#privlyInject1  ßssƒ ∫å˚\n  ",
-          a: { }
+          a: {
+            href: "https://example.com",
+            "class": "replace_link"
+          }
         }
       ]
       
