@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Privly Embed-posting Proxy Test File</title>
+  <link href="../embed_posting.css" media="screen" rel="stylesheet" type="text/css" />
   <script src="../jquery-1.7.1.min.js" type="text/javascript"></script>
   <script type="text/javascript">
     $(document).ready(function() {
@@ -239,6 +240,69 @@
         });
       }());
 
+      // Tase case 8: Yahoo mail
+      // Yahoo mail converts the Privly link into a hyperlink
+      // Comments below are the original code from Yahoo mail
+      // 
+      //    {init: function() {},name: "auto-link-plugin",contentChanged: function(e) {
+      //        if (!this.editor.isRich) return;
+      //        var t = /([a-z0-9-]+\.)+([a-z]{2,4})(\/+[a-z0-9_.\:\;@-]*)*(\?[\&\%\|\+a-z0-9_=,\.\:\;-]*)?([\&\%\|\+&a-z0-9_=,\:\;\.-]*)([\!\#\/\&\%\|\+a-z0-9_=,\:\;\.-]*){*/, r = /^(https?\:\/\/)[^\s]+/, i, s, o, u, a, f, l, c, h = this;
+      //        if (e && (e.type === "paste" || e.type === "keydown" && (e.keyCode === 13 || e.keyCode === 32))) {
+      //            i = h.editor.currentNode();
+      //            if (!i) return;
+      //            if (i.parentElement && i.parentElement.tagName === "A") return;
+      //            s = i.textContent, o = window.getSelection().anchorOffset, u = s.lastIndexOf(" ", o - 1) + 1, a = s.lastIndexOf("\u00a0", o - 1) + 1, a > u && (u = a), u === -1 && (u = 0), f = s.substring(u, o), l, r.test(f) ? l = r.source : l = "^www\\." + t.source, (new RegExp(l, "i")).test(f) && (h.editor.undo && h.editor.saveUndo(), c = n(i, u, o, f), h.editor.contentChanged({type: "link",node: c}), h.editor.undo && h.editor.saveUndo())
+      //        }
+      //    }}
+      
+      (function () {
+
+        // from Yahoo mail
+        function escapeHtml(e,t){
+          return e==null?null:(e=""+e,e=e.replace(/&/g,"&amp;"),e=e.replace(/</g,"&lt;"),e=e.replace(/>/g,"&gt;"),e=e.replace(/\"/g,"&quot;"),e=e.replace(/\'/g,"&#39;"),e=e.replace(/\\/g,"&#92;"),e=e.replace(/{/g,"&#123;"),e=e.replace(/&(?:amp;)+/g,"&amp;"),t&&(e=e.replace(/&amp;#([A-Za-z0-9]+);/g,"&#$1;")),e)
+        }
+
+        // from Yahoo mail
+        // converts text into a hyperlink
+        function n(t,n,r,i){
+          var s=document.createRange(),o=i,u,a;
+          return s.setStart(t,n),s.setEnd(t,r),window.getSelection().removeAllRanges(),window.getSelection().addRange(s),i.indexOf("http")!==0&&(i="http://"+i),i=i.replace('"',"%22").replace("'","%27"),s.deleteContents(),u=document.createElement("a"),u.href=i,u.innerHTML=escapeHtml(o),s.insertNode(u),(a=document.createRange(),a.setStart(u,0),a.setEnd(u,1),window.getSelection().removeAllRanges(),window.getSelection().addRange(a)),window.getSelection().collapseToEnd(),u
+        }
+
+        $('#test8 > div').on('keydown paste', function (ev) {
+          if (ev.type === 'paste' || ev.type === 'keydown' && (ev.keyCode === 13 || ev.keyCode === 32)) {
+            // process hyperlinks
+            // from Yahoo mail
+            var t = /([a-z0-9-]+\.)+([a-z]{2,4})(\/+[a-z0-9_.\:\;@-]*)*(\?[\&\%\|\+a-z0-9_=,\.\:\;-]*)?([\&\%\|\+&a-z0-9_=,\:\;\.-]*)([\!\#\/\&\%\|\+a-z0-9_=,\:\;\.-]*){*/, r = /^(https?\:\/\/)[^\s]+/, i, s, o, u, a, f, l, c, h = this;
+            i = window.getSelection().anchorNode;
+            if (!i) return;
+            if (i.parentElement && i.parentElement.tagName === "A") return;
+            s = i.textContent;
+            o = window.getSelection().anchorOffset;
+            u = s.lastIndexOf(" ", o - 1) + 1;
+            a = s.lastIndexOf("\u00a0", o - 1) + 1;
+            if (a > u)
+              u = a;
+            if (u === -1)
+              u = 0;
+            f = s.substring(u, o); 
+            if (r.test(f))
+              l = r.source;
+            else
+              l = "^www\\." + t.source;
+            if (new RegExp(l, "i").test(f)) {
+              c = n(i, u, o, f);
+              setTimeout(function () {
+                // Yahoo mail will then fetch the remote page
+                c.textContent = 'Message';
+              }, 100);
+            }
+          }
+        });
+
+
+      }());
+
     });
   </script>
 </head>
@@ -248,13 +312,17 @@
     <h1>Privly Embed-posting Proxy Test File</h1>
     <p>This file contains a test cases for different circumstances in which the Privly embed-posting dialog should correctly show submiting button and forward ENTER keyboard events.</p>
     <p>Test cases are intended to be tested automatically.<br>To test it manually, please click the Privly posting button in each editable element to pop up the embed-posting dialog. Detailed expectations are listed in each test case.</p>
+    
+    <h3>General Test</h3>
+    <p>Tests below simulate circumstances of the specific website. The purpose is to test embed-posting in the real world.</p>
+
     <h4>1. Facebook status</h4>
     <p>You should see submit button in embed-posting dialog (caption: <em>发布</em>).<br>
        You should see <em>submitted</em> when: <em>Command+ENTER</em> (Mac OS), <em>Control+ENTER</em> (Other OS).</p>
     <div id="test1">
       <form rel="async" method="post">
-        <textarea role="textbox" style="height: 63px;"></textarea>
-        <button value="1" type="submit">发布</button>
+        <textarea role="textbox" class="textbox"></textarea>
+        <button value="1" type="submit" class="button">发布</button>
       </form>
     </div>
     <br><hr>
@@ -266,7 +334,7 @@
        You should see <em>submitted</em> when: <em>(Any other)+ENTER</em>.<br>
      </p>
     <div id="test2">
-      <textarea style="height: 15px;"></textarea>
+      <textarea style="height: 15px;" class="textbox"></textarea>
     </div>
     <br><hr>
 
@@ -276,8 +344,8 @@
        You should see <em>submitted</em> when: <em>Command+ENTER</em> or <em>Control+ENTER</em>.</p>
     <div id="test3">
       <form accept-charset="UTF-8" data-remote="true" method="post">
-        <textarea required></textarea>
-        <button type="submit">Comment on this commit</button>
+        <textarea required class="textbox"></textarea>
+        <button type="submit" class="button">Comment on this commit</button>
       </form>
     </div>
     <br><hr>
@@ -286,8 +354,8 @@
     <p>You should <em>NOT</em> see submit button in embed-posting dialog.<br>
        You should see <em>Done</em> button in embed-posting dialog.</p>
     <div id="test4">
-      <div g_editable="true" role="textbox" contenteditable="true" aria-multiline="true" style="border: 1px solid #888; width: 100px; height: 50px; overflow: auto;"></div>
-      <div role="button" style="display:inline-block;padding:5px 10px;-webkit-appearance:button;-moz-appearance:button;"><input type="text" tabindex="-1" role="presentation" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;"><span>Post</span></div>
+      <div g_editable="true" role="textbox" contenteditable="true" aria-multiline="true" class="textbox"></div>
+      <div role="button" class="button"><span>Post</span></div>
     </div>
     <br><hr>
 
@@ -295,8 +363,8 @@
     <p>You should <em>NOT</em> see submit button in embed-posting dialog.<br>
        You should see <em>Done</em> button in embed-posting dialog.</p>
     <div id="test5">
-      <div g_editable="true" role="textbox" contenteditable="plaintext-only" style="border: 1px solid #888; width: 100px; height: 50px; overflow: auto;"></div>
-      <div role="button" style="display:inline-block;padding:5px 10px;-webkit-appearance:button;-moz-appearance:button;">Share</div>
+      <div g_editable="true" role="textbox" contenteditable="plaintext-only" class="textbox"></div>
+      <div role="button" class="button">Share</div>
     </div>
     <br><hr>
 
@@ -306,12 +374,31 @@
        You should see <em>submitted</em> when: <em>Command+ENTER</em> or <em>Control+ENTER</em>.</p>
     <div id="test6">
       <form>
-        <div contenteditable="true" role="textbox" style="height: 30px; border: 1px solid #888; width: 100px; overflow: auto;"><div><br></div></div>
-        <button type="button">Tweet</button>
+        <div contenteditable="true" role="textbox" style="height: 30px;" class="textbox"><div><br></div></div>
+        <button type="button" class="button">Tweet</button>
       </form>
     </div>
     <br><hr>
-  </div>
+    
+    <h3>Edge Test</h3>
+    <p>Tests below only contain specific environments in which embed-posting once failed. The purpose is to make sure embed-posting really works in those edge cases and doesn't fail again.</p>
 
+    <h4>7. Live Mail / Baidu Tieba</h4>
+    <p>It once failed because Privly injection functionality tried to parse the Privly link inserted by embed-posting (inside &lt;p&gt; in the contentEditable element) and generated a wrong hyperlink.</p>
+    <p>You should <em>NOT</em> see embed-posting dialog auto closed.</p>
+    <div id="test7">
+      <div contenteditable="true" class="textbox"><p>Write something...</p></div>
+    </div>
+    <br><hr>
+
+    <h4>8. Yahoo Mail</h4>
+    <p>It once failed because Yahoo Mail changed it into a hyperlink (which converts &amp; into &amp;amp;).</p>
+    <p>You should <em>NOT</em> see embed-posting dialog auto closed.</p>
+    <div id="test8">
+      <div contenteditable="true" class="textbox"><p>Write something...</p></div>
+    </div>
+    <br>
+
+  </div>
 </body>
 </html>
