@@ -6,7 +6,20 @@
   <script src="../jquery-1.7.1.min.js" type="text/javascript"></script>
       
   <link href="../privly_button.css" media="screen" rel="stylesheet" type="text/css" />
-  
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // iframe1
+      $('#iframe1')[0].contentWindow.document.body.contentEditable="true";
+      $('#iframe1')[0].contentWindow.document.body.innerHTML = '<p>Write something...</p>'
+
+      // iframe2
+      var doc = $('#iframe2')[0].contentWindow.document;
+      doc.designMode = 'On';
+      doc.open();
+      doc.writeln('<html><body><p>Write something...</p></body></html>');
+      doc.close();
+    });
+  </script>
 </head>
 <body> 
 
@@ -14,45 +27,66 @@
     <h1>Privly Button Test File</h1>
     <p>This file contains a test cases for different circumstances in which the Privly button should appear.
     It shows its position relative to the height of the textarea / editable divs.</p>
-    </br>
+    <br>
     <h4>1. Large textarea with immediate parent div</h4>
     <p>Parent div has border.</p>
     <div id="div1"><textarea id="textarea1">Write something...</textarea></div>
-    </br><hr>
+    <br><hr>
 
     <h4>2. Large textarea without immediate parent div</h4>
     <p>Textarea has border.</p>
     <textarea id="textarea1b">Write something...</textarea>
-    </br><hr>
+    <br><hr>
 
     <h4>3. Small textarea (21px) with immediate parent div</h4>
     <p>Child textarea has 10px top margin. Parent div has a border.</p>
     <div id="div1"><textarea id="textarea2">Enter...</textarea></div>
-    </br><hr>
+    <br><hr>
 
     <h4>4. Small textarea (21px) without immediate parent div</h4>
     <p>Textarea has border.</p>
     <textarea id="textarea2b">Enter...</textarea>
-    </br><hr>
+    <br><hr>
 
     <h4>5. Very small textarea (&lt; 21px) with immediate parent div</h4>
     <p>Textarea has border.</p>
     <div><textarea id="textarea3">Enter...</textarea></div>
-    </br><hr>
+    <br><hr>
 
     <h4>6. Very small textarea (&lt; 21px) without immediate parent div</h4>
     <p>Textarea has border.</p>
     <textarea id="textarea3">Enter...</textarea>
-    </br><hr>
+    <br><hr>
 
-    <h4>7. Editable div</h4>
+    <h4>7. Div (contentEditable="true")</h4>
     <p>Div has border.</p>
     <div contentEditable="true" id="div1">Enter...</div>
-    </br><hr>
+    <br><hr>
 
-    <h4>Editable div with blank child div (Twitter)</h4>
+    <h4>8. Div (contentEditable="")</h4>
+    <p>Div has border.</p>
+    <div contentEditable id="div2">Enter...</div>
+    <br><hr>
+
+    <h4>9. Div (contentEditable="plaintext-only")</h4>
+    <p>Div has border.</p>
+    <div contentEditable="plaintext-only" id="div3">Enter...</div>
+    <br><hr>
+
+    <h4>10. Editable div with blank child div (Twitter)</h4>
     <p>Div has border. Click in the lower part of the div.</p>
-    <div contentEditable="true" id="div2"><div></br></div></div>
+    <div contentEditable="true" id="div4"><div><br></div></div>
+    <br><hr>
+
+    <h4>11. iframe (body contentEditable)</h4>
+    <p>iframe has border.</p>
+    <iframe frameborder="0" id="iframe1"></iframe>
+    <br><hr>
+
+    <h4>12. iframe (designMode='on')</h4>
+    <p>iframe has border.</p>
+    <iframe frameborder="0" id="iframe2"></iframe>
+
   </div>
 </body>
 </html>

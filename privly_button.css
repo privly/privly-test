@@ -41,12 +41,13 @@ hr {
   height: 15px;
   resize: none;
 }
-#div1 {
-  width: 407px;
-  border: 1px solid grey;  
+#div1, #div2, #div3, #iframe1, #iframe2 {
+  width: 400px;
+  height: 50px;
+  border: 1px solid gray;  
 }
-#div2 {
+#div4 {
   width: 400px;
   height: 30px;
-  border: 1px solid grey;
+  border: 1px solid gray;
 }
