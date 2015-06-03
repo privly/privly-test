@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Privly Embed-posting iframes Depth Test File</title>
+  <script src="../jquery-1.7.1.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      // 1 level iframe
+      (function () {
+        var iframe = document.createElement('iframe');
+        iframe.style.width = '200px';
+        iframe.style.height = '100px';
+        $('#test2').append(iframe);
+        iframe.contentWindow.document.body.innerHTML = '<textarea style="width: 150px; height: 70px;"></textarea>';
+      }());
+
+      // 2 level iframe
+      (function () {
+        var iframe = document.createElement('iframe');
+        iframe.style.width = '250px';
+        iframe.style.height = '150px';
+        $('#test3').append(iframe);
+
+        var iframeDoc = iframe.contentWindow.document;
+        var inneriframe = iframeDoc.createElement('iframe');
+        inneriframe.style.width = '200px';
+        inneriframe.style.height = '100px';
+        iframeDoc.body.appendChild(inneriframe);
+
+        inneriframe.contentWindow.document.body.innerHTML = '<textarea style="width: 150px; height: 70px;"></textarea>';
+      }());
+
+      $(document).click(function (ev) {
+        console.log(ev);
+      });
+
+    });
+  </script>
+</head>
+<body> 
+
+  <div id="test_area">
+    <h1>Privly Embed-posting iframes Deptch Test File</h1>
+    <p>This file contains a test cases for different circumstances in which the Privly embed-posting dialog should always appear correctly. Even when the editable element is inside an iframe or nested iframes, the embed-posting dialog should appear on top of any other contents in the webpage.</p>
+    <p>Test cases are intended to be tested automatically.<br>To test it manually, please click the Privly posting button in each editable element. The embed-posting dialog should always appear.</p>
+    <h4>1. Editable element in the top frame</h4>
+    <div id="test1"><textarea style="width: 150px; height: 70px;"></textarea></div>
+    <br><hr>
+
+    <h4>2. Editable element inside an iframe</h4>
+    <div id="test2"></div>
+    <br><hr>
+
+    <h4>3. Editable element inside nested iframes</h4>
+    <div id="test3"></div>
+    <br>
+  </div>
+
+</body>
+</html>
