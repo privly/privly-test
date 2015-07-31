@@ -10,10 +10,14 @@
       // 1 level iframe
       (function () {
         var iframe = document.createElement('iframe');
+        iframe.id = "test2_iframe";
         iframe.style.width = '200px';
         iframe.style.height = '100px';
         $('#test2').append(iframe);
-        iframe.contentWindow.document.body.innerHTML = '<textarea style="width: 150px; height: 70px;"></textarea>';
+        var html = '<html><body><textarea id="test2_textarea" style="width: 150px; height: 70px;"></textarea></body></html>';
+        iframe.contentWindow.document.open();
+        iframe.contentWindow.document.write(html);
+        iframe.contentWindow.document.close();
       }());
 
       // 2 level iframe
@@ -46,7 +50,7 @@
     <p>This file contains a test cases for different circumstances in which the Privly embed-posting dialog should always appear correctly. Even when the editable element is inside an iframe or nested iframes, the embed-posting dialog should appear on top of any other contents in the webpage.</p>
     <p>Test cases are intended to be tested automatically.<br>To test it manually, please click the Privly posting button in each editable element. The embed-posting dialog should always appear.</p>
     <h4>1. Editable element in the top frame</h4>
-    <div id="test1"><textarea style="width: 150px; height: 70px;"></textarea></div>
+    <div id="test1"><textarea id="test1_textarea" style="width: 150px; height: 70px;"></textarea></div>
     <br><hr>
 
     <h4>2. Editable element inside an iframe</h4>
