@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Privly Paragraph type link "George Case"</title>
+  <script src="../jquery-1.7.1.min.js" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+    
+    // This JSON document defines all the test cases for this page.
+    // The format for ths JSON document is:
+    //
+    // {
+    //   [
+    //     {
+    //       title:"test title",
+    //       notes:"Notes on the traits of the test",
+    //       should:"Description of the desired result",
+    //       link_body: "The text to place into the link body",
+    //       test_paragraph: "The plain text in front of the link",
+    //       a:{
+    //          href: "/address/..."
+    //          any_other_attributes: ""
+    //         }
+    //     }, ...
+    //   ]
+    // }
+    //
+    // Links which should get replaced have "class": "replace_link" defined.
+    //
+
+    var testCases =
+      [
+        {
+          title: "Plain Text Address",
+          notes: "Some sites do not linkify user submitted links, so my code will auto convert it to Privly Link.",
+          should: "Should replace the plain text link with the referenced content",
+          link_body: "",
+          test_paragraph: "https://priv.ly/posts/2&privlyApp=PlainPost#privlyInject1",
+          a: { }
+        }
+      ]
+      
+    //
+    // Onready event initializes the page once it loads/
+    //
+    jQuery(document).ready(function() {
+      
+      //For each test case
+      $.each(testCases, function(key, value){
+        
+        //Copy the test case HTML to the test area and assign the values
+        var cloned = $('#blank_test_case').clone().css("display","").appendTo('#test_area');
+
+        // Convert Plain Text Address to Address Privly Link
+        var DetectURLsRegex = /(https?:\/\/[^\s]+)/g;
+        var text = value.test_paragraph;
+        var paragraph = text.replace(DetectURLsRegex, function(PrivlyAppUrl) {
+            return ( '<a href="' + PrivlyAppUrl + '">' + PrivlyAppUrl + '</a>' );
+        });
+
+        cloned.children(".test_title").text(key + ". " + value.title);
+        cloned.children(".test_should").text(value.should);
+        cloned.children(".test_notes").text(value.notes);
+        cloned.children(".test_paragraph").prepend(paragraph);
+        var test_paragraph = cloned.children(".test_paragraph")
+        var test_hyperlink = test_paragraph.children(".test_hyperlink");
+        test_hyperlink.text(value.link_body);
+        
+        // Assign attributes to the link based on the JSON object
+        $.each(value.a, function(key, value){
+          test_hyperlink.attr(key, value);
+        });
+      });
+      
+    });
+    
+  </script>
+  
+  <link href="../styles.css" media="screen" rel="stylesheet" type="text/css" />
+  
+</head>
+<body id="body">
+  
+  <!-- This hidden div is copied by javascript and filled in for the values found in the test JSON -->
+  <div id="blank_test_case" class="testCase" style="display:none;">
+    <h2 class="test_title">Test Title</h2>
+    <p class="test_should">Test Should Message</p>
+    <p class="test_notes">Test Notes</p><hr />
+    <p class="test_paragraph"><a class="test_hyperlink">Test Link</a></p>
+  </div>
+  
+  <!-- All test cases are added to the test_area -->
+  <div id="test_area">
+    <h1>Privly Paragraph type link "George Case" - Plain Text Address</h1>
+    <p>This file contains a list of paragraph type links so with this code paragraph link as text will be converted to Privly Link.</p>
+  </div>
+</body>
+</html>
