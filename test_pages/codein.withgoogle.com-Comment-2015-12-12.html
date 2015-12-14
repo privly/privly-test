@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>How GCI Website Display Links for Privly</title>
+
+  <style>
+    body { margin: 10px; padding: 0px; font-family: Arial; }
+  </style>
+</head>
+<body>
+  
+  <!-- All information about test case are added to the information_about_test_case -->
+  <div id="information_about_test_case">
+    <h1>How GCI website display Privly Links - Plain Text Address</h1>
+    <p>This file contains a list of paragraph type links displayed on GCI website.</p>
+    <p>Some sites do not linkify user submitted links, so here is style how GCI website display links of Privly.</p>
+    <hr />
+    <br />
+  </div>
+
+  <!-- This is test case div - How Privly Links Displayed on GCI Website -->
+  <div id="test_case" class="testCase">
+      <div ng-if="update.kind === ctrl.updateKind.COMMENT" class="task-update__comment">https://priv.ly/posts/2&privlyApp=PlainPost#privlyInject1</div>
+  </div>
+  
+</body>
+</html>
